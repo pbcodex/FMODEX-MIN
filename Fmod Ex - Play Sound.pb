@@ -4,7 +4,7 @@
 
 EnableExplicit
 
-IncludeFile "fmodex.pbi"
+IncludeFile "fmodex-min.pbi"
 
 Enumeration
   #Mainform
@@ -127,7 +127,7 @@ Procedure onExit()
   End
 EndProcedure
 ; IDE Options = PureBasic 5.50 beta 1 (Windows - x86)
-; CursorPosition = 71
-; FirstLine = 71
+; CursorPosition = 6
+; FirstLine = 2
 ; Folding = --
 ; EnableXP
