@@ -12,12 +12,12 @@ Enumeration
   #Volume
 EndEnumeration
 
+Global FmodSystem.i, Url.s, Channel.i, Sound.i, Volume.f, PauseStatus.b
+
 Declare Start()
 Declare onVolume()
 Declare onPause()
 Declare onExit()
-
-Global FmodSystem.i, Url.s, Channel.i, Sound.i, Volume.f, PauseStatus.b
 
 Start()
 
@@ -77,7 +77,6 @@ Procedure onExit()
   End
 EndProcedure
 ; IDE Options = PureBasic 5.50 beta 1 (Windows - x86)
-; CursorPosition = 74
-; FirstLine = 23
+; CursorPosition = 20
 ; Folding = -
 ; EnableXP
