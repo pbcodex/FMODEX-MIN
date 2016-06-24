@@ -24,8 +24,8 @@ Start()
 Procedure Start()
   OpenWindow(#Mainform, 0, 0, 300, 100, "Play Shoutcast", #PB_Window_SystemMenu|#PB_Window_ScreenCentered)
   TextGadget(#PB_Any, 10, 35, 30, 20, "Vol")
-  TrackBarGadget(#Volume, 45, 30, 200, 26, 0, 20)
-  SetGadgetState(#Volume, 5)
+  TrackBarGadget(#Volume, 45, 30, 200, 26, 0, 100)
+  SetGadgetState(#Volume, 50)
   
   ButtonGadget(#Pause, 117, 70, 50, 22, "||")
   
@@ -54,7 +54,7 @@ Procedure Start()
 EndProcedure
 
 Procedure onVolume()
-  Protected Volume.f = GetGadgetState(#Volume)/10
+  Protected Volume.f = GetGadgetState(#Volume)/100
   FMOD_Channel_SetVolume(Channel, Volume)
 EndProcedure
 
@@ -77,6 +77,7 @@ Procedure onExit()
   End
 EndProcedure
 ; IDE Options = PureBasic 5.50 beta 1 (Windows - x86)
-; CursorPosition = 20
+; CursorPosition = 56
+; FirstLine = 23
 ; Folding = -
 ; EnableXP
