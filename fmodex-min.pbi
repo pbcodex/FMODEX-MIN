@@ -97,3 +97,7 @@ Else
   Debug "fmodex.dll or fmodex64.dll is needed and is not found." 
   End
 EndIf
+; IDE Options = PureBasic 5.50 beta 1 (Windows - x86)
+; FirstLine = 52
+; Folding = -
+; EnableXP
