@@ -8,8 +8,8 @@ IncludeFile "fmodex.pbi"
 
 Enumeration
   #Mainform
-  #File
-  #OpenFile
+  #Sound
+  #SelectSound
   #Play
   #Pause
   #Stop
@@ -33,8 +33,8 @@ Start()
 
 Procedure Start()
   OpenWindow(#Mainform, 0, 0, 300, 100, "Play Mp3", #PB_Window_SystemMenu|#PB_Window_ScreenCentered)
-  StringGadget(#File, 10, 20, 230, 22, "", #PB_String_ReadOnly)
-  ButtonGadget(#OpenFile, 245, 20, 50, 22, "Select")
+  StringGadget(#Sound, 10, 20, 230, 22, "", #PB_String_ReadOnly)
+  ButtonGadget(#SelectSound, 245, 20, 50, 22, "Select")
   TextGadget(#PB_Any, 10, 50, 30, 20, "Vol")
   TrackBarGadget(#Volume, 45, 45, 200, 24, 0, 100)
   SetGadgetState(#Volume, 50)
@@ -52,7 +52,7 @@ Procedure Start()
   FMOD_System_Init(FmodSystem, 32, #FMOD_INIT_NORMAL, 0)
   
   ;Triggers
-  BindGadgetEvent(#OpenFile, @onSelectSound())
+  BindGadgetEvent(#SelectSound, @onSelectSound())
   BindGadgetEvent(#Play, @onPlay())
   BindGadgetEvent(#Volume, @onVolume())
   BindGadgetEvent(#Pause, @onPause())
@@ -82,7 +82,7 @@ Procedure onSelectSound()
   ;Select sound
   File = OpenFileRequester("Selectionner un fichier mp3","","Musique|*.mp3;*.wav;*.ogg;*.flac",0)
   If File <> ""
-    SetGadgetText(#File, GetFilePart(File))
+    SetGadgetText(#Sound, GetFilePart(File))
     FMOD_System_CreateStream(FmodSystem, Ascii(File), #FMOD_SOFTWARE, 0, @sound)
     Control(#False)
   EndIf
@@ -127,5 +127,7 @@ Procedure onExit()
   End
 EndProcedure
 ; IDE Options = PureBasic 5.50 beta 1 (Windows - x86)
+; CursorPosition = 71
+; FirstLine = 71
 ; Folding = --
 ; EnableXP
