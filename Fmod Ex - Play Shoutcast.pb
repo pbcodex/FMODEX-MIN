@@ -39,7 +39,7 @@ Procedure Start()
   Url ="http://server1.chilltrax.com:9000"
   FMOD_System_CreateStream(FmodSystem, Ascii(Url), #FMOD_CREATESTREAM, 0, @sound)
   
-  ;Play Shoutcast chanel 1
+  ;Play Shoutcast on chanel 1
   FMOD_System_PlaySound(FmodSystem, 1, Sound, 0, @channel)
   
   ;Set Channel volume (between 0.0 and 1.0)
@@ -77,7 +77,7 @@ Procedure onExit()
   End
 EndProcedure
 ; IDE Options = PureBasic 5.50 beta 1 (Windows - x86)
-; CursorPosition = 56
-; FirstLine = 23
+; CursorPosition = 37
+; FirstLine = 11
 ; Folding = -
 ; EnableXP
